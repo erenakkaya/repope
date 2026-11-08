@@ -1,0 +1,112 @@
+{
+  "project_name": "ViperGGR Casino & Sportsbook Aggregator Platform",
+  "archetype": "ARCHETYPE 5 & 7 (Luxury Cyber Dark Casino & High-Density Sportsbook)",
+  "language": "Turkish (tr-TR)",
+  "theme_system": {
+    "mode": "dark",
+    "background_base": "#0B0E17",
+    "background_surface": "#141A26",
+    "background_elevated": "#1E2638",
+    "border_color": "rgba(255, 255, 255, 0.08)",
+    "primary_gold": "#F59E0B",
+    "primary_gold_hover": "#D97706",
+    "accent_emerald": "#10B981",
+    "accent_crimson": "#EF4444",
+    "accent_cyan": "#06B6D4",
+    "text_primary": "#F9FAFB",
+    "text_secondary": "#9CA3AF",
+    "text_muted": "#6B7280"
+  },
+  "typography": {
+    "font_family_body": "Inter, system-ui, sans-serif",
+    "font_family_heading": "Outfit, sans-serif",
+    "font_family_numbers": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight text-white",
+      "h3": "text-lg sm:text-xl font-semibold text-white",
+      "body": "text-sm text-gray-300 leading-relaxed",
+      "mono_balance": "font-mono font-bold text-amber-400 tracking-wider"
+    }
+  },
+  "key_features_and_flows": {
+    "authentication": {
+      "type": "Username + Password login only (No registration form)",
+      "turkish_labels": {
+        "title": "ViperGGR Casino Girişi",
+        "username_label": "Kullanıcı Adı",
+        "password_label": "Şifre",
+        "submit_button": "Giriş Yap",
+        "error_invalid": "Geçersiz kullanıcı adı veya şifre",
+        "notice": "Hesaplar yalnızca sistem yöneticisi tarafından tanımlanabilir."
+      }
+    },
+    "player_lobby": {
+      "header": {
+        "brand": "VIPERGGR",
+        "balance_display": "TRY Bakiye: ₺",
+        "balance_refresh": "Yenile",
+        "sportsbook_toggle": "Spor Bahisleri",
+        "admin_toggle": "Yönetici Paneli",
+        "logout": "Çıkış Yap"
+      },
+      "filters": {
+        "categories": ["Tüm Oyunlar", "Slotlar", "Canlı Casino", "Crash / Hızlı", "Masa Oyunları", "Favoriler"],
+        "providers": ["Tümü", "Pragmatic Play", "Evolution", "Hacksaw", "EGT", "Spribe", "NetEnt"]
+      },
+      "game_grid": "Grid 2 to 6 columns responsive with glowing gold hover borders, provider tag, play button overlay, RTP badge, and search filter.",
+      "game_launch": "Fullscreen modal / responsive container iframe with fallback demo play or direct launch link."
+    },
+    "sportsbook_view": {
+      "title": "Canlı Spor Bahisleri",
+      "features": ["Futbol", "Basketbol", "Tenis", "E-Spor"],
+      "bet_slip": "Docked right panel for active bet selection and TRY stake calculation."
+    },
+    "admin_dashboard": {
+      "turkish_labels": {
+        "title": "ViperGGR Yönetim Merkezi",
+        "tab_players": "Oyuncu Yönetimi",
+        "tab_transactions": "İşlem Geçmişi",
+        "tab_ggr": "GGR & Viper İstatistikleri",
+        "create_player": "Yeni Oyuncu Oluştur",
+        "add_balance": "+ Bakiye Ekle",
+        "deduct_balance": "- Bakiye Çıkar",
+        "block_player": "Hesabı Kilitle / Aç"
+      },
+      "player_management": ["List players", "Create player with initial balance", "Adjust TRY balance", "Toggle account status"],
+      "analytics": ["GGR stats card", "Viper API balance", "Daily turnover chart", "Top revenue games table"]
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "p-4 sm:p-6 lg:p-8",
+    "card_padding": "p-4 sm:p-6",
+    "grid_gap": "gap-4 sm:gap-6",
+    "card_radius": "rounded-xl",
+    "glassmorphism": "backdrop-blur-xl bg-[#141A26]/80 border border-white/10 shadow-2xl"
+  },
+  "testing_attributes": {
+    "login_username": "login-username-input",
+    "login_password": "login-password-input",
+    "login_submit": "login-submit-button",
+    "player_balance": "player-balance-display",
+    "refresh_balance": "refresh-balance-button",
+    "game_search": "game-search-input",
+    "game_card": "game-card-item",
+    "game_launch_btn": "play-game-button",
+    "admin_players_tab": "admin-tab-players",
+    "admin_create_player_btn": "admin-create-player-btn",
+    "admin_adjust_balance_btn": "admin-adjust-balance-btn"
+  },
+  "image_assets": {
+    "slot_machine_1": "https://images.unsplash.com/photo-1518895312237-a9e23508077d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxjYXNpbm8lMjBzbG90cyUyMGdhbWUlMjB0aHVtYm5haWwlMjBwb3N0ZXJ8ZW58MHx8fHwxNzk0MTcyMzkzfDA&ixlib=rb-4.1.0&q=85",
+    "roulette_table": "https://images.unsplash.com/photo-1726003906867-081fc895ce5d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwzfHxjYXNpbm8lMjBzbG90cyUyMGdhbWUlMjB0aHVtYm5haWwlMjBwb3N0ZXJ8ZW58MHx8fHwxNzk0MTcyMzkzfDA&ixlib=rb-4.1.0&q=85",
+    "arcade_machine": "https://images.unsplash.com/photo-1604028296525-8304e1a4969f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxjYXNpbm8lMjBzbG90cyUyMGdhbWUlMjB0aHVtYm5haWwlMjBwb3N0ZXJ8ZW58MHx8fHwxNzk0MTcyMzkzfDA&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Ensure the application strictly fulfills Turkish language requirements for UI text.",
+    "Implement login workflow using username and password only. Public registration must NOT exist.",
+    "Integrate Sonner toast notifications for user interactions (e.g. balance updated, game launched, login errors).",
+    "Add explicit data-testid attributes to all interactive and key data elements as defined.",
+    "Ensure dark mode contrast meets accessibility standards with vibrant Amber Gold (#F59E0B) actions."
+  ]
+}
