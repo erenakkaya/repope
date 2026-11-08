@@ -11,6 +11,8 @@ const LABELS = {
   rollback: ["İade", "text-cyan-400 bg-cyan-500/10"],
   admin_credit: ["Yükleme", "text-amber-400 bg-amber-500/10"],
   admin_debit: ["Çekim", "text-orange-400 bg-orange-500/10"],
+  transfer_out: ["Bayi → Oyuncu", "text-violet-300 bg-violet-500/10"],
+  transfer_in: ["Oyuncu → Bayi", "text-sky-300 bg-sky-500/10"],
 };
 
 export const TransactionsTab = () => {
@@ -20,7 +22,7 @@ export const TransactionsTab = () => {
 
   const load = useCallback(async () => {
     try {
-      const { data } = await api.get("/admin/transactions", { params: { username, action: action === "all" ? "" : action } });
+      const { data } = await api.get("/manage/transactions", { params: { username, action: action === "all" ? "" : action } });
       setRows(data);
     } catch (e) {
       toast.error(errMsg(e));
@@ -64,7 +66,7 @@ export const TransactionsTab = () => {
                     {t.status === "ok" ? (t.rolled_back ? <span className="text-cyan-400">İade edildi</span> : <span className="text-emerald-400">Tamam</span>)
                       : <span className="text-red-400">{t.error_code || t.status}</span>}
                   </TableCell>
-                  <TableCell className="text-xs text-muted-foreground max-w-[220px] truncate">{t.note || t.provider || t.round_id || ""}</TableCell>
+                  <TableCell className="text-xs text-muted-foreground max-w-[220px] truncate">{[t.note || t.provider || t.round_id, t.by && `(${t.by})`].filter(Boolean).join(" ")}</TableCell>
                 </TableRow>
               );
             })}

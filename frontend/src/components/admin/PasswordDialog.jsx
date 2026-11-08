@@ -11,7 +11,7 @@ export const PasswordDialog = ({ user, onClose }) => {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      await api.patch(`/admin/users/${user.id}`, { password });
+      await api.patch(`/manage/users/${user.id}`, { password });
       toast.success("Şifre güncellendi");
       setPassword("");
       onClose();

@@ -13,7 +13,7 @@ export const Header = ({ onSports }) => {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#0B0E17]/80 border-b border-white/5">
       <div className="max-w-[1600px] mx-auto flex items-center gap-3 px-4 sm:px-8 h-16">
-        <Link to="/" data-testid="header-brand-link" className="mr-auto">
+        <Link to={user?.role === "dealer" ? "/bayi" : "/"} data-testid="header-brand-link" className="mr-auto">
           <Brand className="text-xl" />
         </Link>
         {onSports && (
@@ -26,7 +26,7 @@ export const Header = ({ onSports }) => {
             <Link to="/admin" data-testid="header-admin-link"><Shield className="h-4 w-4" /><span className="hidden md:inline">Yönetim</span></Link>
           </Button>
         )}
-        {!onSports && (
+        {!onSports && user?.role !== "dealer" && (
           <Button asChild variant="ghost" className="gap-2 text-gray-300 hover:text-amber-400">
             <Link to="/" data-testid="header-lobby-link"><LayoutGrid className="h-4 w-4" /><span className="hidden md:inline">Lobi</span></Link>
           </Button>

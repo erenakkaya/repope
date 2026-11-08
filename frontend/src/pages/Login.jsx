@@ -17,15 +17,15 @@ export default function Login() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
-  if (user) return <Navigate to="/" replace />;
+  if (user) return <Navigate to={user.role === "dealer" ? "/bayi" : "/"} replace />;
 
   const submit = async (e) => {
     e.preventDefault();
     setError("");
     setBusy(true);
     try {
-      await login(username, password);
-      navigate("/");
+      const u = await login(username, password);
+      navigate(u.role === "dealer" ? "/bayi" : "/");
     } catch (err) {
       setError(errMsg(err, "Geçersiz kullanıcı adı veya şifre"));
     } finally {

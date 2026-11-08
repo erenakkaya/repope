@@ -6,12 +6,13 @@ import { SiteProvider } from "@/context/SiteContext";
 import Login from "@/pages/Login";
 import Lobby from "@/pages/Lobby";
 import Admin from "@/pages/Admin";
+import Dealer from "@/pages/Dealer";
 
-const Guard = ({ children, admin }) => {
+const Guard = ({ children, roles }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="min-h-screen" />;
   if (!user) return <Navigate to="/login" replace />;
-  if (admin && user.role !== "admin") return <Navigate to="/" replace />;
+  if (roles && !roles.includes(user.role)) return <Navigate to={user.role === "dealer" ? "/bayi" : "/"} replace />;
   return children;
 };
 
@@ -23,8 +24,9 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Guard><Lobby /></Guard>} />
-            <Route path="/admin" element={<Guard admin><Admin /></Guard>} />
+            <Route path="/" element={<Guard roles={["player", "admin"]}><Lobby /></Guard>} />
+            <Route path="/admin" element={<Guard roles={["admin"]}><Admin /></Guard>} />
+            <Route path="/bayi" element={<Guard roles={["dealer"]}><Dealer /></Guard>} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
